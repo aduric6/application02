@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: application02
+    app.kubernetes.io/instance: application02
+  name: application02-svc
+  namespace: application02
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: application02
+  type: NodePort
+status:
+  loadBalancer: {}
